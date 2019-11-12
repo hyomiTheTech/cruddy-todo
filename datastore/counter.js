@@ -54,6 +54,11 @@ exports.getNextUniqueId = (callback) => {
     }
   });
 };
+/* readCounter((err, counter) => {
+  count += 1;
+  writeCounter(counter, callback)
+})
+*/
 
 // Configuration -- DO NOT MODIFY //////////////////////////////////////////////
 
