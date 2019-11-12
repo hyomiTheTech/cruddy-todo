@@ -29,10 +29,24 @@ exports.create = (text, callback) => {
 // DO NOT STORE OBEJCT.
 
 exports.readAll = (callback) => {
-  var data = _.map(items, (text, id) => {
-    return { id, text };
+  var tempArray = [];
+
+  fs.readdir(exports.dataDir, (err, files) => {
+    if (err) {
+      throw ('error readAll files');
+    } else {
+      files.forEach(file => {
+        tempArray.push({id: file.substring(0, file.length - 4), text: file.substring(0, file.length - 4)});
+      });
+      // console.log(tempArray)
+      callback(err, tempArray);
+    }
   });
-  callback(null, data);
+
+  // var data = _.map(items, (text, id) => {
+  //   return { id, text };
+  // });
+  // callback(null, data);
 };
 
 exports.readOne = (id, callback) => {
