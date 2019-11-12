@@ -120,6 +120,7 @@ describe('todos', () => {
       const todo1text = 'todo 1';
       const todo2text = 'todo 2';
       const expectedTodoList = [{ id: '00001', text: '00001' }, { id: '00002', text: '00002' }];
+      // const expectedTodoList = [{ id: '00001', text: '00001' }, { id: '00002', text: '00002' }];
       todos.create(todo1text, (err, todo) => {
         todos.create(todo2text, (err, todo) => {
           todos.readAll((err, todoList) => {
